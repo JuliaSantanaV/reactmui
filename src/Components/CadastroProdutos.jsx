@@ -18,18 +18,15 @@ import {
   Grid,
 } from "@mui/material";
 
-// Importações dos arquivos JSON internos
 import { categoriasDisponiveis } from "../assets/Dados/data";
 import { produtosIniciais } from "../assets/Dados/dadosProdutos";
 
 function CadastrodeProdutos() {
-  // 1. ESTADOS (Memória)
   const [nome, setNome] = React.useState("");
   const [categoria, setCategoria] = React.useState("");
-  // Criamos uma lista na memória que começa com os dados do arquivo
+
   const [listaProdutos, setListaProdutos] = React.useState(produtosIniciais);
 
-  // 2. FUNÇÕES DE MANIPULAÇÃO (Handlers)
   function mudarNome(event) {
     setNome(event.target.value);
   }
@@ -39,18 +36,14 @@ function CadastrodeProdutos() {
   }
 
   function adicionarProduto() {
-    // Criamos um novo objeto com os dados digitados
     const novoItem = {
-      id: Math.random(), // Gera um ID temporário
+      id: Math.random(),
       nome: nome,
       categoria: categoria,
     };
 
-    // Adicionamos o novo item à lista existente
-    // Usamos o padrão de "espalhar" os itens antigos e somar o novo
     setListaProdutos([...listaProdutos, novoItem]);
 
-    // Limpamos os campos após salvar
     setNome("");
     setCategoria("");
   }
@@ -61,7 +54,7 @@ function CadastrodeProdutos() {
         {/* COLUNA 1: FORMULÁRIO DE CADASTRO */}
         <Grid item xs={12} md={5}>
           <Paper sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom align="center">
               Cadastrar Novo
             </Typography>
             <Stack spacing={2}>
@@ -102,7 +95,7 @@ function CadastrodeProdutos() {
 
         {/* COLUNA 2: LISTA DE PRODUTOS CADASTRADOS */}
         <Grid item xs={12} md={7}>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h6" gutterBottom align="center">
             Produtos no Sistema
           </Typography>
           <Paper sx={{ maxHeight: 400, overflow: "auto" }}>

@@ -25,7 +25,7 @@ function FormCadastro() {
           fullWidth
         />
 
-        <Button variant="contained" size="large">
+        <Button variant="contained" size="medium">
           Finalizar Cadastro
         </Button>
       </Stack>
