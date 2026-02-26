@@ -9,11 +9,14 @@ import ExemploEffect from "./Components/ExemploEffect";
 import ContadorEstoque from "./Components/ContadorEstoque";
 import MonitorEstoque from "./Components/MonitorEstoque";
 import CronometroSimples from "./Components/CronometroSimples";
+import ExemploSweerAlert from "./Components/ExemploSweerAlert";
+import AtividadeCliente from "./Components/AtividadeCliente";
 
 function App() {
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 6 }}>
-      <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
+      {
+        /* <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
         <FormCadastro />
       </Paper>
 
@@ -52,6 +55,15 @@ function App() {
       <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
         <CronometroSimples />
       </Paper>
+
+      <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
+        <ExemploSweerAlert />
+      </Paper> */
+
+        <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
+          <AtividadeCliente />
+        </Paper>
+      }
     </Container>
   );
 }

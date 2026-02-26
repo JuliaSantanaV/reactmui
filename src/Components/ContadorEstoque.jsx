@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Typography, Container } from "@mui/material";
+import Swal from "sweetalert2";
 
 function ContadorEstoque() {
   // Criando o estado
@@ -15,7 +16,11 @@ function ContadorEstoque() {
     if (quantidade > 0) {
       setQuantidade(quantidade - 1);
     } else {
-      alert("Estoque já está zerado!");
+      Swal.fire({
+        title: "Atenção!",
+        text: "Não é possível remover mais itens.",
+        icon: "warning",
+      });
     }
   }
 
